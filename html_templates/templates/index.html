@@ -1,0 +1,9 @@
+{% if templates %}
+    <ul>
+    {% for template in templates %}
+        <li><a href="/templates/{{ template.id }}/">{{ template.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No templates are available.</p>
+{% endif %}

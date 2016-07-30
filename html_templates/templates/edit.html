@@ -1,0 +1,11 @@
+
+<form action="{% url 'templates.generate' template.id %}" method="POST">
+ {% csrf_token %}
+{% for field in fields %}
+<label>{{ field | capfirst }}</label>
+<input type="text" name="{{ field }}">	
+{% endfor %}
+<input type="submit">
+</form>
+	
+

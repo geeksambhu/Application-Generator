@@ -3,10 +3,7 @@ from django.http import HttpResponse
 from  .models import Template
 from .core import ContentHandler
 
-from xhtml2pdf import pisa 
-
-from django.template import Context
-from django.template.loader import get_template
+from weasyprint import HTML
 # Create your views here.
 
 def homepage(request):
@@ -35,14 +32,7 @@ def generate(request,template_id):
 
 	htmlstring = contentHandler.replace(template.content,myDict)
 
-	template = get_template('templates/test.html')
-	html  = template.render(Context({'template':template}))
-	
-	file = open('test.pdf', "w+b")
-	pisaStatus = pisa.CreatePDF(html.encode('utf-8'), dest=file,
-	        encoding='utf-8')
-
-	file.seek(0)
-	pdf = file.read()
-	file.close()            
-	return HttpResponse(pdf, 'application/pdf')
+	html = HTML(string=htmlstring)
+	main_doc = html.render()
+	pdf = main_doc.write_pdf()
+	return HttpResponse(pdf, content_type='application/pdf')

@@ -1,11 +1,11 @@
-
-<form action="{% url 'templates.generate' template.id %}" method="POST">
+<h1>Dynamic Form</h1>
+<form action="{% url 'templates.generate' template.id %}" method="POST" accept-charset="utf-8">
  {% csrf_token %}
 {% for field in fields %}
-<label>{{ field | capfirst }}</label>
-<input type="text" name="{{ field }}">	
+<p><label>{{ field | capfirst }}</label></p>
+<p><input type="text" name="{{ field }}"></p>
 {% endfor %}
-<input type="submit">
+<p><input type="submit" value="Generate PDF"></p>
 </form>
 	
 

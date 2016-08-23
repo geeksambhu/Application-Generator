@@ -1,0 +1,50 @@
+.baner .container{
+
+	margin-top: 20px;
+
+}
+
+.baner .container .row .box {
+    outline: 0px solid grey;
+   
+}
+
+a {
+		text-decoration: none;
+}
+
+#banner h2 {
+    border-style: double solid;
+    border-width: 0px;
+    font-size: 2.4em;
+    line-height: 1.35em;
+    margin: 0 auto 1em;
+    padding: 1.1em;
+    position: relative;
+    width: 100%;
+    }
+
+
+ #two{
+
+ 	margin-top: 20px;
+
+ }
+
+
+ .nav li a {
+    position: relative;
+    display: block;
+    padding: 10px 25px;
+
+}
+
+
+#footer {
+
+    background-color: #2f2f2f;
+    color: white;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+}

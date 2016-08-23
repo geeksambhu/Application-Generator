@@ -19,11 +19,11 @@ from django.conf.urls import include
 from templates import views
 
 urlpatterns = [
-	url(r'^$',views.homepage , name='homepage'),
+	url(r'^$',views.index , name='homepage'),
 	url(r'^templates$',views.index , name='templates.index'),
 	url(r'^templates/(?P<template_id>[0-9]+)/$',views.show,name='templates.show'),
-	url(r'^templates/(?P<template_id>[0-9]+)/edit$',views.edit,name='templates.edit'),
-	url(r'^templates/(?P<template_id>[0-9]+)/generate$',views.generate,name='templates.generate'),
+	url(r'^templates/(?P<template_id>[0-9]+)/edit/$',views.edit,name='templates.edit'),
+	url(r'^templates/(?P<template_id>[0-9]+)/generate/$',views.generate,name='templates.generate'),
     url(r'^admin/', admin.site.urls),
     url(r'^ckeditor', include('ckeditor_uploader.urls')),
 

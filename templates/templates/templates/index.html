@@ -1,0 +1,89 @@
+{% extends "templates/header.html" %}
+{% block content %}
+
+<!-- Banner -->
+<div class="baner">
+	<section id="banner">
+		<h2><strong>Application Generator</strong> <i></h2><p>deals with generating an application soft copy related to governmental and non governmental offices.</i>
+			<p>Your application letter in your language</p>
+			<p><h3>Export it in pdf format..<i class="fa fa-file-pdf-o" style="font-size:48px;color:white"></i></p></h3>
+			<ul class="actions">
+				<h3>Choose the templates to create your CV , Resumes,Cover letters</h3>
+				<li><a href="#" class="button special">Get started</a></li>
+			</ul>
+			
+		</section>
+		<!-- One -->
+		<div class="container">
+			<div class="row">
+				{% for temp in templates %}
+				<div class="col-md-4" style=" box-shadow: 5px 5px grey;"">
+					<a href="/templates/{{temp.id}}">
+						<div class="box">
+							{{ temp.name |safe }}
+							{{temp.content |safe}}
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		
+		
+		
+		<!-- Two -->
+		<section id="two" class="wrapper style2 special">
+			<div class="inner narrow">
+				<header>
+					<h2>Get in touch</h2>
+				</header>
+				<!-- <form class="grid-form" method="post" action="#">
+						<div class="form-control narrow">
+								<label for="name">Name</label>
+								<input name="name" id="name" type="text">
+						</div>
+						<div class="form-control narrow">
+								<label for="email">Email</label>
+								<input name="email" id="email" type="email">
+						</div>
+						<div class="form-control">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="4"></textarea>
+						</div>
+						<ul class="actions">
+								<li><input value="Send Message" type="submit"></li>
+						</ul>
+				</form> -->
+				<h4><strong>Application Generator</strong>
+				</h4>
+				<p>Kathmandu
+				</p>
+				<ul class="list-unstyled">
+					<li><i class="fa fa-phone fa-fw"></i> 01----</li>
+					<li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">info@hamroapplication.com</a>
+				</li>
+			</ul>
+			<br>
+			<ul class="list-inline">
+				<li>
+					<a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+				</li>
+				<li>
+					<a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+				</li>
+			</ul>
+			<hr class="small">
+		</div>
+	</section>
+</div>
+<!-- Footer -->
+
+<div id="footer">
+	<p>
+		Copyright@Application Generator	2016
+	</p>
+</div>
+{% endblock %}

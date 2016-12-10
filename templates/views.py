@@ -11,7 +11,7 @@ def homepage(request):
 	return render(request, 'home.html', context)
 
 def index(request):
-	templates = Template.objects.all()[:5]
+	templates = Template.objects.all()[:10]
 	return render(request , 'templates/index.html',{'templates':templates})
 
 def show(request,template_id):

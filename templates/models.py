@@ -8,3 +8,6 @@ class Template(models.Model):
 	is_published = models.NullBooleanField()
 	price = models.FloatField(null = True)
 	# pub_date = models.DateTimeField('date published')
+
+	def __str__(self):
+		return self.name
